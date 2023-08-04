@@ -304,6 +304,8 @@ fn main() -> Result<(), String> {
         ];
 
         let mut current_orient: &Orientation = &orientations[0];
+        //print current orientation
+        
 
         loop {
             let x_raw = fs::read_to_string(path_x.as_str()).unwrap();
@@ -363,6 +365,15 @@ fn main() -> Result<(), String> {
             new_state = current_orient.new_state;
             x_state = current_orient.x_state;
             matrix = current_orient.matrix;
+            
+            //print current orientation
+            println!("Current orientation{}", new_state);
+
+            //print current state
+            println!("Current state{}", x_state);
+
+            //print current matrix
+            println!("Current matrix{:?}", matrix);
 
             if new_state != old_state {
                 let keyboard_state = if new_state == "normal" {
