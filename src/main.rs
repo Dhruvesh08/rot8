@@ -260,8 +260,10 @@ fn main() -> Result<(), String> {
             Ok(path) => {
                 if path.to_str().unwrap().contains("x_raw") {
                     path_x = path.to_str().unwrap().to_owned();
+                    //console.log(path_x);
                 } else if path.to_str().unwrap().contains("y_raw") {
                     path_y = path.to_str().unwrap().to_owned();
+                    //console.log(path_y);
                 } else if path.to_str().unwrap().contains("z_raw") {
                     path_z = path.to_str().unwrap().to_owned();
                 }
@@ -305,11 +307,23 @@ fn main() -> Result<(), String> {
 
         loop {
             let x_raw = fs::read_to_string(path_x.as_str()).unwrap();
+            //print value of x asix
+            println!("X axis{}", x_raw);
             let y_raw = fs::read_to_string(path_y.as_str()).unwrap();
+            //print value of y asix
+            println!("Y axis{}", y_raw);
             let z_raw = fs::read_to_string(path_z.as_str()).unwrap();
+            //print value of z asix
+            println!("Z axis{}", z_raw);
             let x_clean = x_raw.trim_end_matches('\n').parse::<i32>().unwrap_or(0);
+            //print value of x asix
+            println!("X clean value{}", x_clean);
             let y_clean = y_raw.trim_end_matches('\n').parse::<i32>().unwrap_or(0);
+            //print value of y asix
+            println!("Y clean value{}", y_clean);
             let z_clean = z_raw.trim_end_matches('\n').parse::<i32>().unwrap_or(0);
+            //print value of z asix
+            println!("Z clean value{}", z_clean);
 
             // Normalize vectors
             let mut mut_x: f32 = (x_clean as f32) / normalization_factor;
