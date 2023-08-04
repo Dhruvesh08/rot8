@@ -366,14 +366,14 @@ fn main() -> Result<(), String> {
             x_state = current_orient.x_state;
             matrix = current_orient.matrix;
             
-            //print current orientation
-            println!("Current orientation{}", new_state);
+            // //print current orientation
+            // println!("Current orientation{}", new_state);
 
-            //print current state
-            println!("Current state{}", x_state);
+            // //print current state
+            // println!("Current state{}", x_state);
 
-            //print current matrix
-            println!("Current matrix{:?}", matrix);
+            // //print current matrix
+            // println!("Current matrix{:?}", matrix);
 
             if new_state != old_state {
                 let keyboard_state = if new_state == "normal" {
